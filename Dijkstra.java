@@ -92,8 +92,6 @@ public class Dijkstra {
     addEdge(nameV, nameU, cost);
   }
 
-  // STUDENT CODE STARTS HERE
-
   /**
    * Computes the euclidean distance between two points as described by their
    * coordinates
@@ -317,8 +315,6 @@ public class Dijkstra {
 	}
 	return null;
   }
-
-  // STUDENT CODE ENDS HERE
 
   /**
    * Prints out the adjacency list of the dijkstra for debugging
