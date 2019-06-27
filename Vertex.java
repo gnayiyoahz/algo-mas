@@ -3,15 +3,15 @@ import java.util.List;
 
 public class Vertex {
 
-  public int name;
-  public int x;
+  public String name;
+  public int x; // coordinates
   public int y;
   public boolean known;
   public double distance; // total distance from origin point
   public Vertex prev;
   public List<Edge> adjacentEdges;
 
-  public Vertex(int name, int x, int y) {
+  public Vertex(String name, int x, int y) {
     this.name = name;
     this.x = x;
     this.y = y;
@@ -24,7 +24,7 @@ public class Vertex {
   @Override
   public int hashCode() {
     // we assume that each vertex has a unique name
-    return name;
+    return name.hashCode();
   }
 
   @Override
@@ -40,13 +40,15 @@ public class Vertex {
     }
     Vertex oVertex = (Vertex) o;
 
-    return name == oVertex.name && x == oVertex.x && y == oVertex.y;
+    return name.equals(oVertex.name) && x == oVertex.x && y == oVertex.y;
+	  // two vertices have the exact same name and coordinates
   }
 
   public void addEdge(Edge edge) {
     adjacentEdges.add(edge);
   }
 
+	// to print the vertex
   public String toString() {
     return name + " (" + x + ", " + y + ")";
   }
